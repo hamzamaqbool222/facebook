@@ -15,9 +15,8 @@ export function Logo() {
 
 export function SearchIcon() {
   return (
-    <svg viewBox="0 0 24 24" className="h-4 w-4 text-[#65686c]" aria-hidden="true">
-      <circle cx="11" cy="11" r="6.25" fill="none" stroke="currentColor" strokeWidth="2" />
-      <path d="M16 16.5 20 20.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    <svg viewBox="0 0 16 16" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+      <path d="M6.85 2.2a4.65 4.65 0 1 0 2.92 8.27l3.08 3.08a.75.75 0 0 0 1.06-1.06L10.8 9.38A4.65 4.65 0 0 0 6.85 2.2ZM3.7 6.85a3.15 3.15 0 1 1 6.3 0 3.15 3.15 0 0 1-6.3 0Z" />
     </svg>
   );
 }
