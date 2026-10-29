@@ -1,4 +1,44 @@
-import { Avatar, BellIcon, GridIcon, Logo } from "./Icons";
+import { useState } from "react";
+import { Avatar, BellIcon, GridIcon, Logo, SearchIcon } from "./Icons";
+
+function FacebookSearch() {
+  const [open, setOpen] = useState(false);
+
+  if (!open) {
+    return (
+      <button
+        type="button"
+        aria-label="Search Facebook"
+        onClick={() => setOpen(true)}
+        className="ml-1 flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#1c1e21] hover:bg-[#e4e6eb]"
+      >
+        <SearchIcon />
+      </button>
+    );
+  }
+
+  return (
+    <label className="ml-1 flex h-10 w-60 items-center gap-2 rounded-full bg-white px-3 text-[#65686c]">
+      <SearchIcon />
+      <input
+        autoFocus
+        dir="ltr"
+        role="combobox"
+        aria-autocomplete="list"
+        aria-expanded="false"
+        aria-label="Search Facebook"
+        type="search"
+        placeholder="Search Facebook"
+        autoComplete="off"
+        spellCheck={false}
+        onBlur={(event) => {
+          if (!event.currentTarget.value) setOpen(false);
+        }}
+        className="w-full bg-transparent text-[15px] text-[#1c1e21] outline-none placeholder:text-[#65686c]"
+      />
+    </label>
+  );
+}
 
 export default function TopNav() {
   return (
@@ -16,6 +56,7 @@ export default function TopNav() {
         <a href="#top" aria-label="Facebook" className="shrink-0">
           <Logo />
         </a>
+        <FacebookSearch />
       </div>
       <div className="flex items-center gap-2">
         <button
